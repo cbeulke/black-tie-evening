@@ -7,9 +7,10 @@
  * # MainCtrl
  * Controller of the BlackTieApp
  */
-angular.module('BlackTieApp')
+angular.module('blackTieApp')
   .controller('MainCtrl', function ($scope, $location, $http) {
 	$scope.showNameInput = true;
+    $scope.invalidName = false;
     $scope.name = "";
 
     $scope.checkName = function(name) {
@@ -17,8 +18,10 @@ angular.module('BlackTieApp')
             .success(function() {
                 $scope.name = name;
                 $scope.showNameInput = false;
+                $scope.invalidName = false;
             })
             .error(function(data) {
+                $scope.invalidName = true;
                 console.error(data);
             });
     };

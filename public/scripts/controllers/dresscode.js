@@ -7,7 +7,7 @@
  * # DresscodeCtrl
  * Controller of the BlackTieApp
  */
-angular.module('BlackTieApp')
+angular.module('blackTieApp')
   .controller('DresscodeCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

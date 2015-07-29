@@ -7,8 +7,8 @@
 <div class="row" ng-show="showNameInput">
   <div class="col s12">
     <div class="input-field col s12 center-align">
-      <input class="" type="text" ng-model="login.name" id="name">
-      <label for="name">Bitte gib Deinen Namen ein</label>
+      <input class="" type="text" ng-model="login.name" id="name" ng-class="{ validate: invalidName, invalid: invalidName }">
+      <label for="name" data-error="Der Name wurde nicht in der Datenbank gefunden">Bitte gib Deinen Namen ein</label>
     </div>
     <a ng-click="checkName(login.name)" class="black white-text right btn">Senden</a>
   </div>
@@ -17,8 +17,8 @@
 <div class="row" ng-show="!showNameInput">
   <div class="col s12">
     <div class="input-field col s12 center-align">
-      <input class="" type="text" ng-model="login.code" id="code">
-      <label for="code">Bitte gib Deinen Code ein</label>
+      <input class="" type="text" ng-model="login.code" id="code" ng-class="validate">
+      <label for="code" data-error="Der Code ist leider nicht gültig (Codes bestehen nur aus kleinen Buchstaben und Zahlen)">Bitte gib Deinen Code ein</label>
     </div>
     <a ng-click="checkCode(login.code)" class="black white-text right btn">Code prüfen</a>
   </div>

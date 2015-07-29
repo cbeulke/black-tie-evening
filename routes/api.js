@@ -37,27 +37,35 @@ router.post('/code', function(req, res) {
 });
 
 router.post('/name', function(req, res) {
+	var sendMail = function(guest, callback) {
+		var mailOptions = {
+			from: "Christian Beulke <mail@beulke.net>",
+			to: guest.name + "<" + guest.email + ">",
+			subject: "Zugangscode Black Tie Evening",
+			text: guest.code
+		};
+		transporter.sendMail(mailOptions, callback);
+	};
+
+	var sendMailCallback = function(error, info) {
+		if(error){
+	        console.log(error);
+	    }else{
+	        console.log('Message sent: ' + info.response);
+	        // res.status(200);
+	        // res.send('success');
+	    }
+	};
+
 	var name = req.body.name;
 	var result = guests.filter(function(guest) {
 		return guest.name == name;
 	});
 
 	if(result.length > 0) {
-		var mailOptions = {
-			from: "Christian Beulke <mail@beulke.net>",
-			to: result[0].name + "<" + result[0].email + ">",
-			subject: "Zugangscode Black Tie Evening",
-			text: result[0].code
-		};
-		transporter.sendMail(mailOptions, function(error, info) {
-			if(error){
-		        console.log(error);
-		    }else{
-		        console.log('Message sent: ' + info.response);
-		        res.status(200);
-		        res.send('success');
-		    }
-		});
+		// sendMail(result[0], sendMailCallback);
+		res.status(200);
+		res.send('success');
 		
 	} else {
 		res.status(404);

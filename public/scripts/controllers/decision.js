@@ -7,7 +7,7 @@
  * # DecisionCtrl
  * Controller of the BlackTieApp
  */
-angular.module('BlackTieApp')
+angular.module('blackTieApp')
   .controller('DecisionCtrl', function ($scope) {
 
   });

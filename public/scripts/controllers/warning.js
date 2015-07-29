@@ -7,7 +7,7 @@
  * # WarningCtrl
  * Controller of the BlackTieApp
  */
-angular.module('BlackTieApp')
+angular.module('blackTieApp')
   .controller('WarningCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

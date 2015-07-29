@@ -9,13 +9,9 @@
  * Main module of the application.
  */
 angular
-  .module('BlackTieApp', [
+  .module('blackTieApp', [
     'ngAnimate',
-    // 'ngCookies',
-    // 'ngResource',
-    'ngRoute',
-    // 'ngSanitize',
-    // 'ngTouch'
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
