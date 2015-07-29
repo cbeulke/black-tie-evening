@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>BlackTie-Evening</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
+    <style rel="stylesheet">
+
+      body {
+        padding: 20px;
+        background-image: url('images/background-3.jpg');
+        background-position: center;
+      }
+
+      /* label focus color */
+      .input-field input[type=text]:focus + label {
+        color: #B0BEC5;
+      }
+      /* label underline focus color */
+      .input-field input[type=text]:focus {
+        border-bottom: 1px solid #B0BEC5;
+        box-shadow: 0 1px 0 0 #B0BEC5;
+      }
+      .collection {
+        border: 0;
+      }
+      .collection .collection-item {
+        border: 0;
+      }
+      .fade.ng-enter {
+        transition: 0.5s linear all;
+        opacity: 0;
+      }
+      .fade.ng-enter-active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body ng-app="BlackTieApp" class="white">
+
+    <div class="container black white-text z-depth-3" style="padding: 20px;">
+        <div ng-view="" class="fade"></div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/materialize/bin/materialize.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/decision.js"></script>
+    <script src="scripts/controllers/success.js"></script>
+    <script src="scripts/controllers/warning.js"></script>
+    <script src="scripts/controllers/cancelled.js"></script>
+    <script src="scripts/controllers/dresscode.js"></script>
+  </body>
+</html>

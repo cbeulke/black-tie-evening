@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col s12 center">
+    <img src="images/start.jpg" style="width: 45%; margin-top: 30px;"/>
+  </div>
+</div>
+
+<div class="row" ng-show="showNameInput">
+  <div class="col s12">
+    <div class="input-field col s12 center-align">
+      <input class="" type="text" ng-model="login.name" id="name">
+      <label for="name">Bitte gib Deinen Namen ein</label>
+    </div>
+    <a ng-click="checkName(login.name)" class="black white-text right btn">Senden</a>
+  </div>
+</div>
+
+<div class="row" ng-show="!showNameInput">
+  <div class="col s12">
+    <div class="input-field col s12 center-align">
+      <input class="" type="text" ng-model="login.code" id="code">
+      <label for="code">Bitte gib Deinen Code ein</label>
+    </div>
+    <a ng-click="checkCode(login.code)" class="black white-text right btn">Code prüfen</a>
+  </div>
+</div>
